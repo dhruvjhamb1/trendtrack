@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+*.class
+*.so
+.env
+.venv
+env/
+venv/
+ENV/
+.env.local
+.env.*.local
+.DS_Store
+node_modules/
+dist/
+.vercel
+

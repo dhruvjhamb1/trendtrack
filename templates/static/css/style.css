@@ -1,0 +1,238 @@
+:root {
+    --primary-color: #00c2ff;
+    --secondary-color: #0066ff;
+    --bg-dark: #0f172a;
+    --card-bg: #1e293b;
+    --text-primary: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --border-radius: 12px;
+    --spacing: 20px;
+    --gradient-start: #00c2ff;
+    --gradient-end: #0066ff;
+    --card-hover: #2d3a52;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Logo Styling */
+.logo-container {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.logo {
+    max-width: 200px;
+    height: auto;
+    filter: brightness(0.9) contrast(1.1);
+    transition: all 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+    filter: brightness(1) contrast(1.2);
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    color: var(--text-primary);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(0, 194, 255, 0.3);
+}
+
+h2 {
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+/* Glass Card Effect */
+.glass-card {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius);
+    padding: var(--spacing);
+    margin-bottom: var(--spacing);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    background: rgba(45, 58, 82, 0.7);
+    box-shadow: 0 8px 32px rgba(0, 194, 255, 0.1);
+}
+
+/* Button Styling */
+.btn-gradient {
+    position: relative;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    color: white;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(0, 194, 255, 0.3);
+}
+
+.btn-gradient:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(0, 194, 255, 0.5);
+}
+
+.btn-shine {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transform: rotate(45deg);
+    transition: 0.5s;
+}
+
+.btn-gradient:hover .btn-shine {
+    left: 100%;
+}
+
+/* Generate Button */
+.generate-btn {
+    display: block;
+    margin: 2rem auto;
+    padding: 15px 30px;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #00c2ff, #0066ff);
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.1);
+    border-top: 5px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    box-shadow: 0 0 20px rgba(0, 194, 255, 0.3);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Insights Container */
+.insights-container {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+}
+
+.insights-container p {
+    margin: 10px 0;
+    line-height: 1.8;
+}
+
+/* Post Type Selector */
+.post-type-selector {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .post-type-selector {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-gradient {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Neon Text Effect */
+.neon-text {
+    color: var(--text-primary);
+    text-shadow: 0 0 10px rgba(0, 194, 255, 0.5),
+                 0 0 20px rgba(0, 194, 255, 0.3),
+                 0 0 30px rgba(0, 194, 255, 0.1);
+}
+
+/* Graphs Container */
+.graphs-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.chart-wrapper {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius);
+    padding: var(--spacing);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Chart Responsiveness */
+canvas {
+    width: 100% !important;
+    height: 300px !important;
+} 

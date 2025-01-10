@@ -1,0 +1,7 @@
+flask
+python-dotenv
+astrapy
+pandas
+requests
+python-dateutil
+typing-extensions

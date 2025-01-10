@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Insights</title>
+    <link rel="icon" type="image/x-icon" href="/social_media_insights/templates/static/images/favicon.ico">
+    <link rel="stylesheet" href="/social_media_insights/templates/static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Logo Section -->
+        <div class="logo-container">
+            <img src="/social_media_insights/templates/static/images/logo.png" alt="Logo" class="logo">
+        </div>
+
+        <header>
+            <h1 class="neon-text">Social Media Insights</h1>
+        </header>
+        
+        <main>
+            <section class="analysis-section glass-card">
+                <h2>Post Type Analysis</h2>
+                <div class="post-type-selector">
+                    <button class="btn-gradient" onclick="analyzePostType('carousel')">
+                        <span>Carousel Posts</span>
+                        <div class="btn-shine"></div>
+                    </button>
+                    <button class="btn-gradient" onclick="analyzePostType('reels')">
+                        <span>Reels</span>
+                        <div class="btn-shine"></div>
+                    </button>
+                    <button class="btn-gradient" onclick="analyzePostType('static image')">
+                        <span>Static Images</span>
+                        <div class="btn-shine"></div>
+                    </button>
+                </div>
+
+                <!-- Graphs section moved above metrics display -->
+                <div class="graphs-container">
+                    <div class="chart-wrapper">
+                        <canvas id="engagementChart"></canvas>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="interactionsChart"></canvas>
+                    </div>
+                </div>
+
+                <div id="metrics-display" class="metrics-container"></div>
+            </section>
+
+            <section class="insights-section glass-card">
+                <h2>AI-Generated Insights</h2>
+                <button class="btn-gradient generate-btn" onclick="generateInsights()">
+                    <span>Generate Overall Analysis</span>
+                    <div class="btn-shine"></div>
+                </button>
+                <div id="insights-display" class="insights-container"></div>
+            </section>
+        </main>
+    </div>
+    
+    <div class="loading-spinner" id="loading" style="display: none;">
+        <div class="spinner"></div>
+    </div>
+
+    <div id="results" class="results-container">
+        <!-- Add white-space: pre-line to preserve line breaks -->
+        <style>
+            .results-container {
+                white-space: pre-line;
+                line-height: 1.5;
+            }
+        </style>
+    </div>
+
+    <script src="/social_media_insights/templates/static/js/main.js"></script>
+</body>
+</html> 
