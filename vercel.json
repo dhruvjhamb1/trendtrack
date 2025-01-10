@@ -1,21 +1,11 @@
 {
-    "version": 2,
-    "buildCommand": "python -m pip install -r social_media_insights/requirements.txt",
     "builds": [
         {
             "src": "social_media_insights/app.py",
-            "use": "@vercel/python",
-            "config": {
-                "maxLambdaSize": "15mb",
-                "runtime": "python3.9"
-            }
+            "use": "@vercel/python"
         }
     ],
     "routes": [
-        {
-            "src": "/static/(.*)",
-            "dest": "/static/$1"
-        },
         {
             "src": "/(.*)",
             "dest": "social_media_insights/app.py"
