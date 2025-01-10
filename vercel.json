@@ -1,8 +1,10 @@
 {
+    "version": 2,
     "builds": [
         {
             "src": "social_media_insights/app.py",
-            "use": "@vercel/python"
+            "use": "@vercel/python",
+            "config": { "runtime": "python3.9" }
         }
     ],
     "routes": [
