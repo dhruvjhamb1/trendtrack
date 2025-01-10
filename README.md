@@ -1,69 +1,113 @@
-# Social Media Insights
+# TrendTrack: Social Media Insights Platform 🚀
 
-A basic analytics module using Langflow and DataStax to analyze engagement data from mock social media accounts.
+> 🏆 Project submission for Level SuperMind Pre-Hackathon
 
-## Features
+A powerful social media analytics platform that leverages AI to provide deep insights into engagement patterns and content performance. 📊
 
-- Analyze engagement metrics for different post types (carousel, reels, static posts)
-- Generate AI-powered insights using GPT integration
-- Clean and modern web interface
-- Mock data generation for testing
+## 🌟 Features
 
-## Prerequisites
+- Social media engagement pattern analysis
+- AI-powered engagement insights using Langflow with Google Gemini API
+- Interactive data visualization dashboard
+- Historical data analysis with CSV support
+- Secure data persistence with AstraDB
 
-- Python 3.7+
-- DataStax Astra DB account
-- OpenAI API key
-- Langflow installation
+## 🛠 How It Works
 
-## Setup
+1. **Data Collection** 📥
+   - Upload your social media engagement data via CSV
+   - Data is securely stored in AstraDB for persistence
 
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd social_media_insights
+2. **Analysis Pipeline** 🔍
+   - Engagement data is processed using Pandas for initial analysis
+   - GPT integration provides AI-powered insights on engagement patterns
+   - Results are cached in AstraDB for quick retrieval
+
+3. **Visualization** 📊
+   - Chart.js renders interactive visualizations
+   - Real-time updates as new data is processed
+   - Customizable dashboard views for different metrics
+
+4. **Insights Generation** 📊
+   - AI analyzes engagement patterns
+   - Highlights high engagement content formats.
+   - Provides tips to improve the reach and engagement on particular content format.
+
+## 🛠️ Technologies Used
+
+### Backend
+- **Python**  - Core programming language
+- **Flask**  - Web framework
+- **LangFlow** - AI workflow management with GPT integration
+- **AstraDB** - Scalable Vector database
+- **Pandas** - Data analysis and manipulation
+
+### Frontend
+- **HTML** 📝 - Structure
+- **CSS** 🎨 - Styling
+- **JavaScript** ⚡ - Interactive features
+- **Chart.js** 📈 - Data visualization
+
+## 📁 Project Structure
+
+```
+trendtrack/
+├── analysis/
+│   └── engagement_analyzer.py    # Engagement analysis logic
+├── database/
+│   └── astra_connector.py       # AstraDB connection handling
+├── templates/
+│   ├── static/
+│   │   ├── css/
+│   │   ├── js/
+│   │   └── images/
+│   └── index.html              # Main dashboard template
+├── app.py                      # Main Flask application
+├── run.py                      # Development server runner
+├── requirements.txt            # Project dependencies
+└── render_app.py               # Render Deployment 
 ```
 
-2. Install dependencies:
+## 📊 Sample CSV Data
+
+The project includes a sample dataset (`engagement.csv`) containing social media engagement metrics:
+- Engagement metrics (likes, shares, comments)
+- Content categories
+- Audience reach
+
+## 🚀 Getting Started
+
+1. Clone the repository
+```bash
+git clone https://github.com/dhruvjhamb1/trendtrack.git
+```
+
+2. Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Configure environment variables:
-- Copy `.env.example` to `.env`
-- Fill in your DataStax Astra DB credentials
-- Add your OpenAI API key
-- Specify the path to your Astra DB secure connect bundle
+3. Set up environment variables in `.env`:
+```
+ASTRA_DB_ID=your_db_id
+ASTRA_DB_TOKEN=your_token
+LANGFLOW_APPLICATION_TOKEN=your_token
+FLASK_ENV=production
+FLASK_APP=run.py
+```
 
-4. Initialize the database:
-- Create a keyspace in your Astra DB instance
-- The application will automatically create the necessary tables on first run
-
-## Running the Application
-
-1. Start the Flask server:
+4. Run the application
 ```bash
-python app.py
+python render_app.py
 ```
 
-2. Open your browser and navigate to:
-```
-http://localhost:5000
-```
+## 🌐 Live Demo
 
-## Usage
+Check out the live project at: [TrendTrack](https://trendtrack.onrender.com)
 
-1. Click on different post type buttons to view engagement metrics
-2. Use the "Generate Insights" button to get AI-powered analysis
-3. View metrics and insights in the clean web interface
+## 🤝 Contributing
 
-## Project Structure
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-- `/static` - CSS and JavaScript files
-- `/templates` - HTML templates
-- `/database` - Database connection and operations
-- `/analysis` - Engagement analysis and AI integration
-
-## Contributing
-
-Feel free to submit issues and enhancement requests! 
+---
+Built with ❤️ using Python, Flask, Langflow and AstraDB. 
