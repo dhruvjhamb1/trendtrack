@@ -101,7 +101,7 @@ FLASK_APP=run.py
 python render_app.py
 ```
 
-## 🌐 Live Demo
+## 🌐 Live Project
 
 Check out the live project at: [TrendTrack](https://trendtrack.onrender.com)
 
