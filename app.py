@@ -17,6 +17,10 @@ analyzer = EngagementAnalyzer(db)
 def index():
     return render_template('index.html')
 
+@app.route('/ping', methods=['GET'])
+def ping():
+    return jsonify({"status": "ok"}), 200
+
 @app.route('/api/analyze', methods=['POST'])
 def analyze_posts():
     post_type = request.json.get('post_type')
@@ -33,4 +37,5 @@ def get_insights():
     return jsonify(insights)
 
 if __name__ == '__main__':
+
     app.run(debug=True) 
